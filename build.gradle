@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'zw.amvntm.mod'
+version = '0.1'
+
+ext {
+    gdxVersion = '1.11.0'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' } // 添加 JitPack 仓库
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+}
+
+dependencies {
+    api "com.badlogicgames.gdx:gdx:${gdxVersion}"
+    api "com.github.zqll4.artemis-odb:artemis-odb:2.4.1"
+    api("net.mostlyoriginal.artemis-odb:contrib-plugin-singleton:2.5.0") {
+        exclude group: "net.onedaybeard.artemis", module: "artemis-odb"
+    }
+    api("net.mostlyoriginal.artemis-odb:contrib-core:2.5.0") {
+        exclude group: "net.onedaybeard.artemis", module: "artemis-odb"
+    }
+}
