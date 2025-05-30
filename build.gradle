@@ -1,8 +1,7 @@
-plugins {
-    id 'java-library'
-}
+apply plugin: 'java-library'
+apply plugin:'maven-publish'
 
-group = 'zw.amvntm.mod'
+group = 'com.github.amvtnm'
 version = '0.1'
 
 ext {
@@ -24,4 +23,19 @@ dependencies {
     api("net.mostlyoriginal.artemis-odb:contrib-core:2.5.0") {
         exclude group: "net.onedaybeard.artemis", module: "artemis-odb"
     }
+}
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
 }
