@@ -1,0 +1,1 @@
+利用libgdx和artemis通过接口实现mod-api
