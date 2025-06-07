@@ -20,5 +20,4 @@ public interface Mod {
     default void reload(){}
     default void onEnable() {}
     default void onDisable(){}
-    default void loadResource(AssetsManager assetsManager) {}
 }
